@@ -11,3 +11,8 @@ def input_two_line_numbers():
 
 def output_list_as_numbers(A):
     print(' '.join(map(str, A)))
+
+# example: 1 2 + 3 4 - *
+def input_operand_numbers():
+    input_string_list = list(input().split())
+    return input_string_list

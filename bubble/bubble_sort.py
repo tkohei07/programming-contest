@@ -12,8 +12,8 @@ def bubble_sort(A, num):
 
 	return count, A
 
-num, A = input_output_tools.input_two_line_numbers()
-count, A = bubble_sort(A, num)
+# num, A = input_output_tools.input_two_line_numbers()
+# count, A = bubble_sort(A, num)
 
-input_output_tools.output_list_as_numbers(A)
-print(count)
+# input_output_tools.output_list_as_numbers(A)
+# print(count)
