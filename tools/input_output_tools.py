@@ -1,4 +1,6 @@
-# example: 4
+import sys
+
+# input example: 4
 #          3, 2, 6, 9 
 def input_two_line_numbers():
     for i in range(2):
@@ -12,7 +14,20 @@ def input_two_line_numbers():
 def output_list_as_numbers(A):
     print(' '.join(map(str, A)))
 
-# example: 1 2 + 3 4 - *
+# input example: 1 2 + 3 4 - *
 def input_operand_numbers():
     input_string_list = list(input().split())
     return input_string_list
+
+def input_multiple_lines():
+    input_list = []
+    # [lines q, name1 num1, name2 num2, ...]
+    for l in sys.stdin:
+        input_list.append(l)
+    lines, q = map(str, input_list[0].split())
+    list_in_list = []
+    # [[name1, num1], [name2, num2], ...]
+    for i in range(1, len(input_list)):
+        T = input_list[i].strip("\n").split()
+        list_in_list.append([T[0], int(T[1])])
+    return int(lines), int(q), list_in_list
