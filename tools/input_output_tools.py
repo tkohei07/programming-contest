@@ -31,3 +31,10 @@ def input_multiple_lines():
         T = input_list[i].strip("\n").split()
         list_in_list.append([T[0], int(T[1])])
     return int(lines), int(q), list_in_list
+
+def input_four_lines():
+    line_num = 4
+    input_list = []
+    for l in range(line_num):
+        input_list.append(list(map(int, input().split())))
+    return input_list
