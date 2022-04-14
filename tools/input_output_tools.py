@@ -24,12 +24,19 @@ def input_multiple_lines():
     # [lines q, name1 num1, name2 num2, ...]
     for l in sys.stdin:
         input_list.append(l)
-    lines, q = map(str, input_list[0].split())
+    if ' ' in input_list[0]:
+        lines, q = map(str, input_list[0].split())
+    else:
+        lines = input_list[0]
+        q = '0'
     list_in_list = []
     # [[name1, num1], [name2, num2], ...]
     for i in range(1, len(input_list)):
         T = input_list[i].strip("\n").split()
-        list_in_list.append([T[0], int(T[1])])
+        if q == '0':
+            list_in_list.append([T[0], T[1]])
+        else:
+            list_in_list.append([T[0], int(T[1])])
     return int(lines), int(q), list_in_list
 
 def input_four_lines():
@@ -38,3 +45,6 @@ def input_four_lines():
     for l in range(line_num):
         input_list.append(list(map(int, input().split())))
     return input_list
+
+if __name__ == "__main__":
+    print(input_four_lines())
